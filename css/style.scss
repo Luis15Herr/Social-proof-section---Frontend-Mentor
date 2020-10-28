@@ -1,0 +1,302 @@
+.attribution {
+    bottom: 25px;
+    font-size: 11px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translatex(-50%);
+    width: 100%;
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+html {
+    @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+    font-family: "Spartan", sans-serif;
+    height: 100%;
+    background-image: url(/images/bg-pattern-top-desktop.svg);
+    background-repeat: no-repeat;
+}
+
+body {
+    align-content: center;
+    align-items: center;
+    background-image: url(/images/bg-pattern-bottom-desktop.svg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 100%;
+    margin: 0;
+}
+.container {
+    margin: auto;
+    padding-top: 30px;
+    width: 1440px;
+}
+
+.main {
+    padding: 0 165px;
+}
+.top-row {
+    display: flex;
+    padding: 0px 0 60px 0;
+    .left {
+        width: 50%;
+        .content {
+            width: 90%;
+
+            .title {
+                font-weight: 700;
+                color: hsl(300, 43%, 22%);
+                font-size: 3em;
+                line-height: 48px;
+                letter-spacing: -2px;
+            }
+            .sub-title {
+                width: 440px;
+                margin-top: 12px;
+                color: hsl(303, 10%, 53%);
+                line-height: 1.8em;
+                font-weight: 500;
+                font-size: 14.5px;
+            }
+        }
+    }
+    .right {
+        width: 50%;
+        padding-left: 30px;
+        padding-top: 15px;
+        .ratings {
+            display: flex;
+            flex-wrap: wrap;
+            .rated {
+                display: flex;
+                align-items: center;
+                width: 70%;
+                padding: 18px 35px;
+                margin-bottom: 15px;
+                background-color: #f7f2f7;
+                font-weight: 700;
+                color: #502050;
+                font-size: 14px;
+                border-radius: 10px;
+                .stars {
+                    display: inline-block;
+                    margin-right: 25px;
+                    height: 80%;
+                    img {
+                        margin-right: 3px;
+                    }
+                }
+
+                &:not(:first-child):not(:last-child) {
+                    margin: auto;
+                    margin-bottom: 15px;
+                }
+                &:last-child {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+.cards-row {
+    display: flex;
+    justify-content: space-between;
+    .card {
+        width: 31.5%;
+        background-color: #502050;
+        border-radius: 10px;
+        height: max-content;
+        .user {
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            margin-top: 40px;
+            .user-img {
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+            .user-info {
+                margin-left: 25px;
+                .name {
+                    display: block;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                .buyer {
+                    color: hsl(333, 80%, 67%);
+                    font-size: 14px;
+                }
+            }
+        }
+        .testimonials {
+            margin-top: 25px;
+            padding: 0 30px;
+            color: white;
+            line-height: 1.7em;
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+        &:not(:first-child):not(:last-child) {
+            margin-top: 20px;
+        }
+        &:last-child {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        .main {
+            padding: 0 20px;
+        }
+    }
+    .top-row {
+        .right {
+            .ratings {
+                .rated {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 900px) {
+    html {
+        height: auto;
+        background-image: url(/images/bg-pattern-top-mobile.svg);
+    }
+    body {
+        height: auto;
+        position: relative;
+        background-image: url(/images/bg-pattern-bottom-mobile.svg);
+        background-size: cover;
+    }
+
+    .container {
+        padding: 100px 0;
+        width: 90%;
+        margin: auto;
+        .main {
+            padding: 0;
+        }
+    }
+    .top-row {
+        padding-bottom: 30px;
+        flex-wrap: wrap;
+        .left {
+            width: 100%;
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                .title {
+                    width: 80%;
+                    text-align: center;
+                }
+                .sub-title {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 1.3em;
+                }
+            }
+        }
+        .right {
+            width: 100%;
+            padding: 0;
+            margin-top: 40px;
+            .ratings {
+                justify-content: center;
+                .rated {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    font-size: 1.1em;
+                    .stars {
+                        width: 100%;
+                        text-align: center;
+                        margin-right: 0;
+                        height: 25px;
+                    }
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .cards-row {
+        flex-wrap: wrap;
+        .card {
+            width: 100%;
+            .user {
+                .user-info {
+                    .name {
+                        font-size: 1.1em;
+                    }
+                    .buyer {
+                        font-size: 1em;
+                    }
+                }
+            }
+            .testimonials {
+                font-size: 1.1em;
+            }
+            &:not(:first-child):not(:last-child) {
+                margin-top: 15px;
+            }
+            &:last-child {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .top-row {
+        .left {
+            .content {
+                .title {
+                    font-size: 2em;
+                }
+                .sub-title {
+                    font-size: 15px;
+                }
+            }
+        }
+        .right {
+            .ratings {
+                .rated {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .cards-row {
+        flex-wrap: wrap;
+        .card {
+            .user {
+                .user-info {
+                    .name {
+                        font-size: 15px;
+                    }
+                    .buyer {
+                        font-size: 15px;
+                    }
+                }
+            }
+            .testimonials {
+                font-size: 15px;
+            }
+        }
+    }
+}
